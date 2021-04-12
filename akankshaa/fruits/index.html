@@ -1,0 +1,70 @@
+<html>
+    <head>
+            <script type="text/javascript" src="data.json"></script>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <img src="https://previews.123rf.com/images/boarding1now/boarding1now1710/boarding1now171000097/87941139-fruits-fruit-food-collection-background-banner-orange-apple-apples-lemon-berries-cherries.jpg">
+     <div class="jumbotron text-center">
+          <div class="page-header">
+             <h1 id='custom'>Fruits</h1>
+                    </div>
+               <br>
+     <form onsubmit="addition()">
+          <input type="text" id="nameoffruit" />
+          <input type="submit" value="ADD" id="submithere" />
+      </form>
+        <div id="list">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwCogHDMY750J8Au1WyoK31dE_VO7zTXNzEg&usqp=CAU" id="bg" alt="">
+        </div>
+        </div>  
+        <div class="footer">
+            <p>Assignment</p>
+        </div> 
+            </div>
+    </body>
+     <script>
+            
+            var data2 = JSON.parse(data);
+            var i;
+      function print(){
+        document.getElementById("list").innerHTML =''
+            for (i in data2){
+                    document.getElementById("list").innerHTML += '<br><div class="popup" onclick="display_popup('+i+')"><span id="ff">'+data2[i].name+'</span><span class="popuptext" id="Popups">Popup text...</span></div>'; 
+                    document.getElementById("list").innerHTML += '&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn" onclick="del('+i+')"><i class="fa fa-trash" style="font-size:24px;color:green"></button>';
+            }
+    }
+    
+    
+function addition() {
+    data2.push({ "name":nameoffruit.value, 
+    "color":"Yellow", 
+    "count":4,
+     "expiry": "25 Mar 2010" });
+
+    print();
+    event.preventDefault();
+}; 
+print();
+
+function display_popup(i) {
+document.getElementById('Popups').innerHTML = data2[i].name+'<br>Color: '+data2[i].color+'<br>Count:'+data2[i].count+'<br>Expiry Date: '+data2[i].expiry;
+  var popup = document.getElementById("Popups");
+  popup.classList.toggle("show");
+}
+
+function del(i) {
+ data2.splice(i, 1);
+  print();
+};
+             </script> 
+</html>
