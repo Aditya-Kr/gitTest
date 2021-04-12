@@ -27,15 +27,20 @@ function func2() {
 function func() {
     document.getElementById("y").style.backgroundColor = "yellow";
 }
-function start()
+function waitforme(milisec) {
+            return new Promise(resolve => {
+        setTimeout(() => { resolve('') }, milisec);
+    })
+}
+async function start()
 {
-		setTimeout(function()
-		{var txt="";
+		var txt="";
 		for(x in data)
 		{
+		 await waitforme(1000);
 		 txt += "<h2>"+data[x].name+"</h2><hr><b>Color: </b>"+data[x].color+"<br><b>Count: </b>"+data[x].count+"<br><b>Expiry: </b>"+data[x].expiry+"<br><br><button class='btn btn-primary' onclick=del("+x+")>Delete</button>";
 		 document.querySelector("#details").innerHTML = txt;
-}},3000);
+		}
 }
 function add()
 {
