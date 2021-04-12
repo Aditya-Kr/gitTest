@@ -1,20 +1,20 @@
 var data = [{
 	"name": "Apple",
 	"color": "red",
-	"count": 3,
+	"count": 13,
 	"expiry": "2-02-2020"
 },
 {
 	"name": "Mango",
 	"color": "yellow",
-	"count": 3,
-	"expiry": "2-02-2020"
+	"count": 7,
+	"expiry": "2-04-2023"
 },
 {
 	"name": "Orange",
 	"color": "orange",
 	"count": 3,
-	"expiry": "2-02-2020"
+	"expiry": "23-10-2030"
 }]
 function func1() {
     document.getElementById('yok').style.backgroundColor = "red";
@@ -70,7 +70,21 @@ function add()
 		obj = JSON.parse(s);
 		data.push(obj);
 		}
-		setTimeout(start(),10000);
+		setTimeout(function(){for(var x=0;x<6;x++)
+		{
+		if(data[x]==undefined)
+		{
+			document.querySelector("#demo"+x).innerHTML = "Empty";
+		 txt = "<b>Color: </b>"+"Empty"+"<br><b>Count: </b>"+"Empty"+"<br><b>Expiry: </b>"+"Empty";
+		 document.querySelector("#details"+x).innerHTML = txt;
+		}
+		else
+		{
+		 document.querySelector("#demo"+x).innerHTML = data[x].name;
+		 txt = "<b>Color: </b>"+data[x].color+"<br><b>Count: </b>"+data[x].count+"<br><b>Expiry: </b>"+data[x].expiry
+		 document.querySelector("#details"+x).innerHTML = txt;
+		}
+		}},3000);
 		
 }
 function del(x)
@@ -82,5 +96,19 @@ function del(x)
 	}
 	data.splice(x,1);
 	console.log(data);
-	setTimeout(start(),10000);
+	setTimeout(function(){for(var x=0;x<6;x++)
+		{
+		if(data[x]==undefined)
+		{
+			document.querySelector("#demo"+x).innerHTML = "Empty";
+		 txt = "<b>Color: </b>"+"Empty"+"<br><b>Count: </b>"+"Empty"+"<br><b>Expiry: </b>"+"Empty";
+		 document.querySelector("#details"+x).innerHTML = txt;
+		}
+		else
+		{
+		 document.querySelector("#demo"+x).innerHTML = data[x].name;
+		 txt = "<b>Color: </b>"+data[x].color+"<br><b>Count: </b>"+data[x].count+"<br><b>Expiry: </b>"+data[x].expiry
+		 document.querySelector("#details"+x).innerHTML = txt;
+		}
+		}},3000);
 }
