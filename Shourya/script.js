@@ -47,7 +47,7 @@ function add()
 		if(w=="")
 			w="Not provided";
 		if(x=="")
-			w="Not provided";
+			x="Not provided";
 		if(y=="")
 			y="Not provided";
 		if(z=="")
