@@ -1,0 +1,144 @@
+#bg {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+      
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+  }
+  #custom{
+      font-family:'Courier New', Courier, monospace;
+      font-size: 50px;
+      color:#23a327;
+  }
+  img{
+      width:100%;
+      height:20%;
+  }
+
+#ff{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+    color:rgb(201, 127, 176);
+
+
+}
+input {
+    width: 55%;
+  }
+  input[type=text] {
+    background-color: #e7c1d9;
+    color: white;
+    
+  }
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: rgb(228, 188, 218);
+      color: white;
+      text-align: center;
+    }
+h1{
+    text-align: center;
+    color: #4CAF50;
+}
+      ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #1fa7c2;
+        }
+
+        li {
+        float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            }
+    
+            /* Change the link color to #111 (black) on hover */
+            li a:hover {
+            background-color: #111;
+            }
+            .active {
+        background-color: #4CAF50;
+        }
+        .jumbotron {
+
+height: 100%;
+    }
+    .popup {
+position: relative;
+display: inline-block;
+cursor: pointer;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+visibility: hidden;
+width: 160px;
+background-color: rgb(253, 199, 255);
+color: rgb(15, 3, 3);
+text-align: center;
+border-radius: 20px;
+padding: 8px 0;
+position: absolute;
+z-index: 1;
+bottom: 125%;
+left: 70%;
+margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+content: "";
+position: absolute;
+top: 100%;
+left: 50%;
+margin-left: -5px;
+border-width: 8px;
+border-style: solid;
+border-color: rgb(129, 4, 129) transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+visibility: visible;
+-webkit-animation: fadeIn 2s;
+animation: fadeIn 2s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+from {opacity: 0;} 
+to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+from {opacity: 0;}
+to {opacity:1 ;}
+}
+div.absolute {
+position: absolute;
+top: 80px;
+right: 500px;
+width: 80px;
+height: 60px;
+
+}
+.green-color{
+    color:green;
+}
