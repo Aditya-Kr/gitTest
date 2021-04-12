@@ -29,21 +29,13 @@ function func() {
 }
 function start()
 {
-		for(var x=0;x<6;x++)
+		setTimeout(function()
+		{var txt="";
+		for(x in data)
 		{
-		if(data[x]==undefined)
-		{
-			document.querySelector("#demo"+x).innerHTML = "Empty";
-		 txt = "<b>Color: </b>"+"Empty"+"<br><b>Count: </b>"+"Empty"+"<br><b>Expiry: </b>"+"Empty";
-		 document.querySelector("#details"+x).innerHTML = txt;
-		}
-		else
-		{
-		 document.querySelector("#demo"+x).innerHTML = data[x].name;
-		 txt = "<b>Color: </b>"+data[x].color+"<br><b>Count: </b>"+data[x].count+"<br><b>Expiry: </b>"+data[x].expiry
-		 document.querySelector("#details"+x).innerHTML = txt;
-		}
-		}
+		 txt += "<h2>"+data[x].name+"</h2><hr><b>Color: </b>"+data[x].color+"<br><b>Count: </b>"+data[x].count+"<br><b>Expiry: </b>"+data[x].expiry+"<br><br><button class='btn btn-primary' onclick=del("+x+")>Delete</button>";
+		 document.querySelector("#details").innerHTML = txt;
+}},3000);
 }
 function add()
 {
@@ -51,64 +43,47 @@ function add()
 		var x = String(document.getElementById('color').value);
 		var y = String(document.getElementById('count').value);
 		var z = String(document.getElementById('date').value);
-		if(data.length==5)
-		{
-			window.alert("No more fruits can be added please delete some fruits first");
-		}
-		else
-		{
 		console.log(w+x+y+z);
-		if(w==undefined)
+		if(w=="")
 			w="Not provided";
-		if(x==undefined)
-			w="Not provided";
-		if(y==undefined)
+		if(x=="")
+			x="Not provided";
+		if(y=="")
 			y="Not provided";
-		if(z==undefined)
+		if(z=="")
 			z="Not provided";
 		let s = '{ "name": "'+w+'","color": "'+x+'","count": "'+y+'","expiry": "'+z+'"}';
 		obj = JSON.parse(s);
 		data.push(obj);
-		}
-		setTimeout(function(){for(var x=0;x<6;x++)
+		var txt="";
+		for(x in data)
 		{
-		if(data[x]==undefined)
-		{
-			document.querySelector("#demo"+x).innerHTML = "Empty";
-		 txt = "<b>Color: </b>"+"Empty"+"<br><b>Count: </b>"+"Empty"+"<br><b>Expiry: </b>"+"Empty";
-		 document.querySelector("#details"+x).innerHTML = txt;
+		 txt += "<h2>"+data[x].name+"</h2><hr><b>Color: </b>"+data[x].color+"<br><b>Count: </b>"+data[x].count+"<br><b>Expiry: </b>"+data[x].expiry+"<br><br><button class='btn btn-primary' onclick=del("+x+")>Delete</button><br><br><br>";
+		 document.querySelector("#details").innerHTML = txt;
 		}
-		else
-		{
-		 document.querySelector("#demo"+x).innerHTML = data[x].name;
-		 txt = "<b>Color: </b>"+data[x].color+"<br><b>Count: </b>"+data[x].count+"<br><b>Expiry: </b>"+data[x].expiry
-		 document.querySelector("#details"+x).innerHTML = txt;
-		}
-		}},3000);
 		
 }
 function del(x)
 {
 	console.log(data.length+" "+x);
-	if(x>=data.length)
-	{
-		window.alert("The selected card is already empty !.");
-	}
 	data.splice(x,1);
 	console.log(data);
-	setTimeout(function(){for(var x=0;x<6;x++)
+	console.log(x);
+	var txt="";
+		if(data.length==0)
 		{
-		if(data[x]==undefined)
-		{
-			document.querySelector("#demo"+x).innerHTML = "Empty";
-		 txt = "<b>Color: </b>"+"Empty"+"<br><b>Count: </b>"+"Empty"+"<br><b>Expiry: </b>"+"Empty";
-		 document.querySelector("#details"+x).innerHTML = txt;
+		document.querySelector("#details").innerHTML = "<h5 class='card-title'>There are no fruits to display please add them to get them displayed.</h5>";
 		}
 		else
 		{
-		 document.querySelector("#demo"+x).innerHTML = data[x].name;
-		 txt = "<b>Color: </b>"+data[x].color+"<br><b>Count: </b>"+data[x].count+"<br><b>Expiry: </b>"+data[x].expiry
-		 document.querySelector("#details"+x).innerHTML = txt;
+		for(x in data)
+		{
+		 txt += "<h2>"+data[x].name+"</h2><hr><b>Color: </b>"+data[x].color+"<br><b>Count: </b>"+data[x].count+"<br><b>Expiry: </b>"+data[x].expiry+"<br><br><button class='btn btn-primary' onclick=del("+x+")>Delete</button><br><br><br>";
+		 document.querySelector("#details").innerHTML = txt;
 		}
-		}},3000);
+		}
+}
+function update(x)
+{
+	
 }

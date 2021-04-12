@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style >
+      body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 5px solid #ddd;
+}
+
+
+    </style>
+    <script>
+        function testVariable() {
+            debugger
+            var strText = document.getElementById("fruit").value;
+            
+            document.getElementById("p1").innerHTML = strText;
+            
+        }
+    </script>
+    <meta charset="utf-8">
+    <title>Fruits Listers</title>
+  </head>
+  <body style="background-color:powderblue;">
+
+    <h1 style="text-align:center;">FRUITS</h1>
+    <div id='create-fruit'>
+      <form id="fruitform">
+        <input id="fruit" placeholder="Fruit Name..."  />
+        <input type="submit" value="Add Fruit" onclick="testVariable()"  />
+    </div>
+    <p id="p1"></p>
+    <div id='fruitcontainer'></div>
+<script src='index.js'></script>
+  </body>
+</html>

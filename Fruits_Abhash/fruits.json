@@ -1,0 +1,28 @@
+{
+  "fruits": [
+    {
+      "name": "Mango",
+      "count": "2",
+      "expiryDate": "20-August-2021",
+      "id": 1
+    },
+    {
+      "name": "papaya",
+      "count": 10,
+      "expiryDate": "22-june-2022",
+      "id": 2
+    },
+    {
+      "name": "kiwi",
+      "count": 10,
+      "expiryDate": "22-june-2022",
+      "id": 3
+    },
+    {
+      "name": "lichi",
+      "count": 10,
+      "expiryDate": "22-june-2022",
+      "id": 4
+    }
+  ]
+}
