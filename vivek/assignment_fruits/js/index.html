@@ -1,0 +1,94 @@
+<html>
+    <head>
+            <script type="text/javascript" src="b.json"></script>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+        
+            <ul>
+                    <li><a class="active" href="#home">Vivek's Assignment</a></li>
+                    
+                    
+                  </ul>
+
+                  <div class="jumbotron text-center" style="margin-bottom:0">
+                        <h1>Fruits</h1>
+                        <br>
+            <form onsubmit="add()">
+                    <input type="text" id="fruitname" />
+                    <input type="submit" value="Add fruit" id="submitButton" />
+                  </form>
+        <div id="list">
+
+        </div>
+        <div class="absolute">
+        <img src="cherry.jpg" alt="Flowers in Chania">
+    </div>
+        
+        <div class="footer">
+                <p>Footer</p>
+              </div>
+        </div>      
+            
+
+    </body>
+    <button class="btn"><i class="fa fa-trash"></i></button>
+    <script>
+            
+            var mydata = JSON.parse(data);
+            var i;
+            function waitforme(milisec) {
+            return new Promise(resolve => {
+        setTimeout(() => { resolve('') }, milisec);
+    })
+}
+     async function printfruits(){
+        document.getElementById("list").innerHTML =''
+            for (i in mydata){
+                await waitforme(1000);
+                // alert(mydata[i].name)
+                
+                    document.getElementById("list").innerHTML += '<br><div class="popup" onclick="display_popup('+i+')"><span id="ff">'+mydata[i].name+'</span><span class="popuptext" id="myPopup">Popup text...</span></div>'; 
+                    document.getElementById("list").innerHTML += '&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn" onclick="del('+i+')"><i class="fa fa-trash"></button>';
+                
+     
+            }
+    }
+    
+    
+function add() {
+    mydata.push({ "name":fruitname.value, "color":"Yellow", "count":2, "expiry": "25 Mar 2015" });
+
+    printfruits();
+    event.preventDefault();
+};
+
+function del(i) {
+        mydata.splice(i, 1);
+    printfruits();
+    // event.preventDefault()
+};
+
+printfruits();
+function display_popup(i) {
+document.getElementById('myPopup').innerHTML = mydata[i].name+'<br>Color: '+mydata[i].color+'<br>Count:'+mydata[i].count+'<br>Expiry: '+mydata[i].expiry;
+
+  var popup = document.getElementById("myPopup");
+
+  popup.classList.toggle("show");
+}
+             </script>
+</html>
