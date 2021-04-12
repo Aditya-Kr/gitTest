@@ -1,0 +1,1 @@
+data= '[{ "name":"Apple", "color":"Red", "count":50 ,"expiry": "12 Apr 2021"},{ "name":"Grapes", "color":"Black", "count":70 ,"expiry": "12 Apr 2021"},{ "name":"Mango", "color":"Yellow", "count":30 ,"expiry": "12 Apr 2021"},{ "name":"Custard-Apple", "color":"Green", "count":10 ,"expiry": "12 Apr 2021"}]';
